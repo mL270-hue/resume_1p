@@ -1,64 +1,146 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>My Resume</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mariane Lara - Resume</title>
+    <style>
+        /* ===== CSS START ===== */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
 
-<style>
-body{
-    font-family: Arial;
-    margin:40px;
-    background:#f4f4f4;
-}
+        .container {
+            width: 80%;
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
+        }
 
-.container{
-    background:white;
-    padding:20px;
-    border-radius:10px;
-}
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
 
-h1{
-    color:#333;
-}
+        header h1 {
+            margin-bottom: 5px;
+        }
 
-.section{
-    margin-top:20px;
-}
-</style>
+        section {
+            margin-bottom: 20px;
+        }
 
+        h2 {
+            color: #0073e6;
+            border-bottom: 2px solid #0073e6;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        ul {
+            list-style-type: square;
+            padding-left: 20px;
+        }
+
+        form input, form textarea {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        form button {
+            padding: 10px 20px;
+            background-color: #0073e6;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background-color: #005bb5;
+        }
+
+        #responseMessage {
+            margin-top: 10px;
+            font-weight: bold;
+            color: green;
+        }
+        /* ===== CSS END ===== */
+    </style>
 </head>
-
 <body>
+    <div class="container">
+        <header>
+            <h1>Mariane Lara</h1>
+            <p>Computer Science Student | Aspiring Data Scientist</p>
+            <p>Email: mariane.lara@email.com | Phone: +123456789</p>
+        </header>
 
-<div class="container">
+        <section id="about">
+            <h2>About Me</h2>
+            <p>I am a student at Asia University, passionate about technology, coding, and data science. I enjoy learning new programming skills and working on innovative projects.</p>
+        </section>
 
-<h1>Mariane Lara</h1>
-<p>Student at Asia University</p>
+        <section id="education">
+            <h2>Education</h2>
+            <ul>
+                <li>Bachelor of Computer Science, Asia University, 2023–Present</li>
+            </ul>
+        </section>
 
-<div class="section">
-<h2>About Me</h2>
-<p>I am a student at Asia University studying Computer Science and Information Engineering. My student ID is AU114001001. I am interested in data science, AI, and web development.</p>
-</div>
+        <section id="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>Programming: Python, JavaScript, HTML, CSS</li>
+                <li>Data Science: Pandas, NumPy, Machine Learning</li>
+                <li>Tools: Git, VS Code, Jupyter Notebook</li>
+            </ul>
+        </section>
 
-<div class="section">
-<h2>Skills</h2>
-<ul>
-<li>Python</li>
-<li>HTML</li>
-<li>CSS</li>
-<li>JavaScript</li>
-</ul>
-</div>
+        <section id="projects">
+            <h2>Projects</h2>
+            <ul>
+                <li>AI-based Fake News Detection Web App</li>
+                <li>Windows Image Recognition App using OpenCV</li>
+            </ul>
+        </section>
 
-<div class="section">
-<h2>Education</h2>
-<p>Asia University – Computer Science and Information Engineering</p>
-</div>
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <form id="contactForm">
+                <input type="text" id="name" placeholder="Your Name" required>
+                <input type="email" id="email" placeholder="Your Email" required>
+                <textarea id="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+            <p id="responseMessage"></p>
+        </section>
+    </div>
 
-<script>
-console.log("Resume website loaded");
-</script>
+    <script>
+        // ===== JavaScript START =====
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
 
-</div>
+            let name = document.getElementById('name').value;
+            // Simulate sending message
+            document.getElementById('responseMessage').textContent =
+                `Thank you, ${name}! Your message has been sent.`;
 
+            // Clear form fields
+            document.getElementById('contactForm').reset();
+        });
+        // ===== JavaScript END =====
+    </script>
 </body>
 </html>
