@@ -7,34 +7,55 @@
     <style>
         /* ===== CSS START ===== */
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f2f5;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
             margin: 0;
             padding: 0;
             color: #333;
         }
 
         .container {
-            width: 80%;
-            max-width: 800px;
-            margin: 20px auto;
+            max-width: 900px;
+            margin: 40px auto;
             background-color: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .left-column, .right-column {
             padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
         }
 
-        header {
+        .left-column {
+            flex: 1 1 30%;
             text-align: center;
-            margin-bottom: 20px;
+            border-right: 1px solid #ddd;
         }
 
-        header h1 {
+        .left-column img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            border: 3px solid #0073e6;
+        }
+
+        .left-column h1 {
             margin-bottom: 5px;
+            font-size: 24px;
         }
 
-        section {
-            margin-bottom: 20px;
+        .left-column p {
+            font-size: 14px;
+            margin: 5px 0;
+        }
+
+        .right-column {
+            flex: 1 1 70%;
         }
 
         h2 {
@@ -42,6 +63,11 @@
             border-bottom: 2px solid #0073e6;
             display: inline-block;
             padding-bottom: 5px;
+            margin-top: 0;
+        }
+
+        section {
+            margin-bottom: 20px;
         }
 
         ul {
@@ -55,6 +81,7 @@
             padding: 10px;
             border-radius: 5px;
             border: 1px solid #ccc;
+            font-size: 14px;
         }
 
         form button {
@@ -64,6 +91,7 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            font-size: 14px;
         }
 
         form button:hover {
@@ -75,56 +103,76 @@
             font-weight: bold;
             color: green;
         }
+
+        @media(max-width:768px){
+            .container {
+                flex-direction: column;
+            }
+            .left-column {
+                border-right: none;
+                border-bottom: 1px solid #ddd;
+            }
+        }
         /* ===== CSS END ===== */
     </style>
 </head>
 <body>
     <div class="container">
-        <header>
+        <!-- LEFT COLUMN -->
+        <div class="left-column">
+            <img src="your-photo.jpg" alt="Mariane Lara">
             <h1>Mariane Lara</h1>
-            <p>Computer Science Student | Aspiring Data Scientist</p>
-            <p>Email: mariane.lara@email.com | Phone: +123456789</p>
-        </header>
+            <p>Computer Science Student</p>
+            <p>Aspiring Data Scientist</p>
+            <p>Email: mariane.lara@email.com</p>
+            <p>Phone: +123456789</p>
+        </div>
 
-        <section id="about">
-            <h2>About Me</h2>
-            <p>I am a student at Asia University, passionate about technology, coding, and data science. I enjoy learning new programming skills and working on innovative projects.</p>
-        </section>
+        <!-- RIGHT COLUMN -->
+        <div class="right-column">
+            <section id="about">
+                <h2>About Me</h2>
+                <p>I am a motivated student at Asia University with a strong passion for technology, coding, and data science. I enjoy learning new programming languages, improving my technical skills, and applying data-driven approaches to solve real-world problems. Through academic studies and personal projects, I continuously explore innovative technologies and develop practical solutions. I am eager to expand my knowledge, gain hands-on experience, and contribute to meaningful technology-driven projects. 🚀
+</p>
+            </section>
 
-        <section id="education">
-            <h2>Education</h2>
-            <ul>
-                <li>Bachelor of Computer Science, Asia University, 2023–Present</li>
-            </ul>
-        </section>
+            <section id="education">
+                <h2>Education</h2>
+                <ul>
+                    <li>Junior High School, WTMNHS, 20142018-2021</li>
+                    <li>Senior High School, Placido T. Amo, 2018-2021</li>
+                    <li>Bachelor of Computer Science, Asia University, 2023–Present</li>
+                </ul>
+            </section>
 
-        <section id="skills">
-            <h2>Skills</h2>
-            <ul>
-                <li>Programming: Python, JavaScript, HTML, CSS</li>
-                <li>Data Science: Pandas, NumPy, Machine Learning</li>
-                <li>Tools: Git, VS Code, Jupyter Notebook</li>
-            </ul>
-        </section>
+            <section id="skills">
+                <h2>Skills</h2>
+                <ul>
+                    <li>Programming: Python, JavaScript, HTML, CSS</li>
+                    <li>Data Science: Pandas, NumPy, Machine Learning</li>
+                    <li>Tools: Git, VS Code, Jupyter Notebook</li>
+                </ul>
+            </section>
 
-        <section id="projects">
-            <h2>Projects</h2>
-            <ul>
-                <li>AI-based Fake News Detection Web App</li>
-                <li>Windows Image Recognition App using OpenCV</li>
-            </ul>
-        </section>
+            <section id="projects">
+                <h2>Projects</h2>
+                <ul>
+                    <li>AI-based Fake News Detection Web App</li>
+                    <li>Windows Image Recognition App using OpenCV</li>
+                </ul>
+            </section>
 
-        <section id="contact">
-            <h2>Contact Me</h2>
-            <form id="contactForm">
-                <input type="text" id="name" placeholder="Your Name" required>
-                <input type="email" id="email" placeholder="Your Email" required>
-                <textarea id="message" placeholder="Your Message" required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
-            <p id="responseMessage"></p>
-        </section>
+            <section id="contact">
+                <h2>Contact Me</h2>
+                <form id="contactForm">
+                    <input type="text" id="name" placeholder="Your Name" required>
+                    <input type="email" id="email" placeholder="Your Email" required>
+                    <textarea id="message" placeholder="Your Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+                <p id="responseMessage"></p>
+            </section>
+        </div>
     </div>
 
     <script>
@@ -133,11 +181,10 @@
             e.preventDefault();
 
             let name = document.getElementById('name').value;
-            // Simulate sending message
+
             document.getElementById('responseMessage').textContent =
                 `Thank you, ${name}! Your message has been sent.`;
 
-            // Clear form fields
             document.getElementById('contactForm').reset();
         });
         // ===== JavaScript END =====
