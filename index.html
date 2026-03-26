@@ -1,210 +1,286 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Mariane Lara Resume</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mariane Lara | Portfolio Resume</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a; /* Deep Slate */
+            --accent: #10b981;  /* Emerald Green */
+            --text-main: #334155;
+            --text-light: #f8fafc;
+            --bg-light: #f1f5f9;
+        }
 
-<style>
+        * {
+            box-sizing: border-box;
+            -webkit-print-color-adjust: exact;
+        }
 
-body{
-    margin:0;
-    font-family:Arial, Helvetica, sans-serif;
-}
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
 
-/* Layout */
+        .main {
+            display: flex;
+            max-width: 1000px;
+            margin: 40px auto;
+            background: white;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            min-height: 1100px;
+        }
 
-.main{
-    display:flex;
-}
+        /* --- Left Sidebar --- */
+        .left {
+            width: 32%;
+            background: var(--primary);
+            color: var(--text-light);
+            padding: 40px 25px;
+        }
 
-/* Left Side */
+        .profile-container {
+            text-align: center;
+            margin-bottom: 30px;
+        }
 
-.left{
-    width:35%;
-    background:#1f2a38;
-    color:white;
-    padding:30px;
-    text-align:center;
-}
+        .left img {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            border: 3px solid var(--accent);
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
 
-.left img{
-    width:150px;
-    height:150px;
-    border-radius:50%;
-    border:4px solid white;
-}
+        .left h1 {
+            font-size: 1.4rem;
+            margin: 10px 0;
+            letter-spacing: 1px;
+            line-height: 1.2;
+        }
 
-.left h1{
-    margin-top:15px;
-}
+        .left-section {
+            margin-top: 35px;
+        }
 
-.left h3{
-    color:#6fb3ff;
-    font-weight:normal;
-}
+        .left-section h2 {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent);
+            border-bottom: 1px solid #334155;
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+        }
 
-/* Sections Left */
+        .contact-item {
+            font-size: 0.85rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
 
-.left-section{
-    margin-top:30px;
-    text-align:left;
-}
+        .skills-list, .lang-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
 
-.left-section h2{
-    border-bottom:1px solid #555;
-    padding-bottom:5px;
-}
+        .skill-tag {
+            background: #1e293b;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            border: 1px solid #334155;
+        }
 
-.left-section ul{
-    padding-left:18px;
-}
+        /* --- Right Content --- */
+        .right {
+            width: 68%;
+            padding: 50px;
+        }
 
-/* Right Side */
+        .right h2 {
+            font-size: 1.3rem;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
 
-.right{
-    width:65%;
-    background:#f4f4f4;
-    padding:40px;
-}
+        .right h2::after {
+            content: "";
+            flex: 1;
+            height: 2px;
+            background: var(--bg-light);
+        }
 
-.right h2{
-    border-bottom:3px solid #1f2a38;
-    padding-bottom:5px;
-}
+        .profile-text {
+            font-size: 1rem;
+            color: #475569;
+            margin-bottom: 20px;
+        }
 
-.job{
-    margin-top:20px;
-}
+        .card {
+            margin-bottom: 25px;
+            padding-left: 15px;
+            border-left: 3px solid var(--bg-light);
+            transition: border-color 0.3s;
+        }
 
-.job ul{
-    margin-top:8px;
-}
+        .card:hover {
+            border-left-color: var(--accent);
+        }
 
-</style>
+        .card h3 {
+            margin: 0;
+            font-size: 1.1rem;
+            color: var(--primary);
+        }
 
+        .card-meta {
+            font-size: 0.85rem;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .card ul {
+            padding-left: 20px;
+            margin: 5px 0;
+            font-size: 0.9rem;
+        }
+
+        /* Print Optimization */
+        @media print {
+            body { background: white; }
+            .main { margin: 0; box-shadow: none; width: 100%; }
+            .left { background: #0f172a !important; color: white !important; }
+        }
+
+        @media (max-width: 768px) {
+            .main { flex-direction: column; margin: 0; }
+            .left, .right { width: 100%; }
+        }
+    </style>
 </head>
-
 <body>
 
 <div class="main">
+    <aside class="left">
+        <div class="profile-container">
+            <img src="ayan.jpg" alt="Mariane Lara">
+            <h1>MARIANE <br> GARZON LARA</h1>
+        </div>
 
-<!-- LEFT SIDE -->
+        <div class="left-section">
+            <h2>Contact</h2>
+            <div class="contact-item">📞 +886 123 456 789</div>
+            <div class="contact-item">🆔 111021138</div>
+            <div class="contact-item">📧 laramariane48@email.com</div>
+            <div class="contact-item">📍 Taiwan</div>
+        </div>
 
-<div class="left">
+        <div class="left-section">
+            <h2>Technical Skills</h2>
+            <div class="skills-list">
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">HTML5</span>
+                <span class="skill-tag">CSS3</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">Data Analysis</span>
+                <span class="skill-tag">Pandas</span>
+                <span class="skill-tag">Scikit-learn</span>
+                <span class="skill-tag">Machine Learning</span>
+            </div>
+        </div>
 
-<img src="ayan.jpg" alt="Profile Photo">
+        <div class="left-section">
+            <h2>Languages</h2>
+            <div class="contact-item">English (Fluent)</div>
+            <div class="contact-item">Filipino (Native)</div>
+        </div>
 
-<h1>Mariane Garzon Lara</h1>
+        <div class="left-section">
+            <h2>Interests</h2>
+            <div class="skills-list">
+                <span class="skill-tag">Cooking</span>
+                <span class="skill-tag">Dancing</span>
+                <span class="skill-tag">Reading</span>
+            </div>
+        </div>
+    </aside>
 
-<div class="left-section">
-<h2>Contact</h2>
-<p>📞 +886 123 456 789</p>
-<p>ID: 111021138</p>
-<p>📧 laramariane48@email.com</p>
-<p>📍 Taiwan</p>
+    <main class="right">
+        <section>
+            <h2>Profile</h2>
+            <p class="profile-text">
+                Computer Science and Information Engineering student at <strong>Asia University</strong> with a focus on 
+                Artificial Intelligence and Data Science. Driven by the challenge of turning complex data into 
+                practical software solutions and high-impact web experiences.
+            </p>
+        </section>
+
+        <section>
+            <h2>Key Projects</h2>
+            
+            <div class="card">
+                <h3>AI Fake News Detection System</h3>
+                <div class="card-meta">Machine Learning / NLP</div>
+                <ul>
+                    <li>Developed a model to classify news veracity using Natural Language Processing.</li>
+                    <li>Utilized <strong>Pandas</strong> and <strong>Scikit-learn</strong> for data pipeline and training.</li>
+                    <li>Built a web interface for real-time article testing.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Personal Resume Website</h3>
+                <div class="card-meta">Web Development</div>
+                <ul>
+                    <li>Designed a responsive UI/UX using modern CSS Flexbox and Grid.</li>
+                    <li>Optimized for fast loading and cross-browser compatibility.</li>
+                    <li>Managed version control and deployment via <strong>GitHub Pages</strong>.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Air Quality Data Analysis</h3>
+                <div class="card-meta">Data Science</div>
+                <ul>
+                    <li>Explored environmental datasets to identify pollution trends over time.</li>
+                    <li>Created interactive visualizations to communicate complex data insights.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Education</h2>
+            <div class="card">
+                <h3>Asia University</h3>
+                <div class="card-meta">BS in Computer Science & Information Engineering</div>
+                <p style="font-size: 0.85rem; margin: 0;">2023 – Present | Taichung, Taiwan</p>
+            </div>
+
+            <div class="card">
+                <h3>Placido T. Amo SHS</h3>
+                <div class="card-meta">Senior High School Graduate</div>
+                <p style="font-size: 0.85rem; margin: 0;">2018 – 2021</p>
+            </div>
+        </section>
+    </main>
 </div>
-
-<div class="left-section">
-<h2>Skills</h2>
-<ul>
-<li>Python</li>
-<li>HTML</li>
-<li>CSS</li>
-<li>JavaScript</li>
-<li>Data Analysis</li>
-<li>Machine Learning Basics</li>
-</ul>
-</div>
-
-<div class="left-section">
-<h2>Languages</h2>
-<ul>
-<li>English</li>
-<li>Filipino</li>
-</ul>
-</div>
-
-<div class="left-section">
-<h2>Hobbies</h2>
-<ul>
-<li>Cooking</li>
-<li>Dancing</li>
-<li>Reading</li>
-</ul>
-</div>
-
-</div>
-
-
-<!-- RIGHT SIDE -->
-
-<div class="right">
-
-<h2>Profile</h2>
-
-<p>
-Computer Science and Information Engineering student at Asia University with a strong interest in
-Artificial Intelligence, Data Science, and Web Development. Passionate about building
-practical software solutions and continuously improving programming and analytical skills.
-</p>
-
-
-<h2>Projects</h2>
-
-<div class="job">
-<h3>AI Fake News Detection System</h3>
-<ul>
-<li>Developed a machine learning model to detect fake news using Natural Language Processing.</li>
-<li>Used Python libraries such as Pandas and Scikit-learn for data preprocessing and training.</li>
-<li>Created a simple web interface for users to test news articles.</li>
-</ul>
-</div>
-
-<div class="job">
-<h3>Personal Resume Website</h3>
-<ul>
-<li>Designed and developed a personal resume website using HTML, CSS, and JavaScript.</li>
-<li>Implemented a responsive two-column layout for better user experience.</li>
-<li>Deployed the project using GitHub.</li>
-</ul>
-</div>
-
-<div class="job">
-<h3>Air Quality Data Analysis</h3>
-<ul>
-<li>Analyzed air quality datasets using Python and Pandas.</li>
-<li>Visualized pollution trends using data visualization tools.</li>
-<li>Identified environmental patterns and presented insights through graphs.</li>
-</ul>
-</div>
-
-
-<h2>Education</h2>
-
-<div class="job">
-<strong>Asia University</strong><br>
-Bachelor of Computer Science and Information Engineering<br>
-2023 – Present
-</div>
-
-<div class="job">
-<strong>Placido T. Amo Senior High School</strong><br>
-2018 – 2021
-</div>
-
-<div class="job">
-<strong>WTMNHS Junior High School</strong><br>
-2014 – 2018
-</div>
-
-</div>
-
-</div>
-
-<script>
-
-console.log("Resume loaded successfully");
-
-</script>
 
 </body>
 </html>
