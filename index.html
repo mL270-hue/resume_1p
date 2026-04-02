@@ -205,7 +205,7 @@
             body { background: white; }
             .main { margin: 0; box-shadow: none; width: 100%; }
             .left { background: #0f172a !important; color: white !important; }
-            .music-player { display: none; } /* Hide music player on printed resume */
+            .music-player { display: none; }
         }
 
         @media (max-width: 768px) {
@@ -233,7 +233,7 @@
                     <span>🔊</span>
                 </div>
                 <audio id="bg-music" loop>
-                    <source src="background-music.mp3" type="audio/mpeg">
+                    <source src="./background-music.mp3" type="audio/mpeg">
                 </audio>
             </div>
         </div>
@@ -288,7 +288,6 @@
 
         <section>
             <h2>Key Projects</h2>
-            
             <div class="card">
                 <h3>AI Fake News Detection System</h3>
                 <div class="card-meta">Machine Learning / NLP</div>
@@ -341,15 +340,18 @@
     const btn = document.getElementById('music-btn');
     const volumeSlider = document.getElementById('volume-slider');
 
-    // Initialize volume
     music.volume = volumeSlider.value;
 
-    // Toggle Play/Pause
     btn.addEventListener('click', () => {
         if (music.paused) {
-            music.play();
-            btn.innerHTML = "Pause Theme ⏸️";
-            btn.style.background = "var(--danger)";
+            // Attempting to play and catching errors
+            music.play().then(() => {
+                btn.innerHTML = "Pause Theme ⏸️";
+                btn.style.background = "var(--danger)";
+            }).catch(error => {
+                console.error("Playback failed. Check if file exists:", error);
+                alert("Audio file not found or browser blocked it. Make sure 'background-music.mp3' is uploaded to your GitHub repo!");
+            });
         } else {
             music.pause();
             btn.innerHTML = "Play Theme 🎵";
@@ -357,7 +359,6 @@
         }
     });
 
-    // Volume Slider Control
     volumeSlider.addEventListener('input', (e) => {
         music.volume = e.target.value;
     });
